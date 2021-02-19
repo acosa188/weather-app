@@ -1,31 +1,35 @@
 <template>
   <div class="backgroundClass" :style="{backgroundImage:`url(${backgroundPath})`}">
+  <animation :weather="weatherDesc" />
   </div>
 </template>
 
 <script>
-import landscapeImages from "../data/landscape.json";
-import portraitImages from "../data/portrait.json";
+import landscapeImages from "../data/landscape.json"
+import portraitImages from "../data/portrait.json"
+import Animation from '../components/Animation.vue'
 
 export default {
   data() {
     return {
       images: this.isPortrait(window.innerHeight, window.innerWidth) ?  portraitImages : landscapeImages,
+      weatherDesc: ''
     };
+  },
+  components:{
+    Animation
   },
   computed: {
     backgroundPath() {
       let today = new Date();
       let season = this.whatSeason(today.getMonth() + 1);
       return require(`../assets/${this.randomBackground(season)}`);
-    },
+    }
   },
   async mounted() {
     await this.$store.dispatch("location/getLocations");
-    await this.$store.dispatch(
-      "weather/getCurrentWeather",
-      this.$store.state.location.city
-    );
+    await this.$store.dispatch("weather/getCurrentWeather",this.$store.state.location.city);
+    this.weatherDesc = this.$store.state.weather.description
   },
   methods: {
     whatSeason(curMonth) {
@@ -52,10 +56,12 @@ export default {
 
 <style scoped>
 .backgroundClass{
-    display: absolute;
+    position: relative;
     height: 100vh;
+    width: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
 }
 </style>
