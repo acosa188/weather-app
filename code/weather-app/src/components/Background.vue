@@ -1,6 +1,7 @@
 <template>
   <div class="backgroundClass" :style="{backgroundImage:`url(${backgroundPath})`}">
   <animation :weather="weatherDesc" />
+  <Content />
   </div>
 </template>
 
@@ -8,6 +9,7 @@
 import landscapeImages from "../data/landscape.json"
 import portraitImages from "../data/portrait.json"
 import Animation from '../components/Animation.vue'
+import Content from '../components/Content.vue'
 
 export default {
   data() {
@@ -17,7 +19,8 @@ export default {
     };
   },
   components:{
-    Animation
+    Animation,
+    Content
   },
   computed: {
     backgroundPath() {

@@ -8,7 +8,9 @@ const state = () => ({
     temp_max: '',
     feels_like: '',
     iconUrl:'',
-    description: ''
+    description: '',
+    humidity: '',
+    wind_speed: ''
 })
 
 const getters = {}
@@ -23,6 +25,8 @@ const actions = {
             commit('setFeelsLike', weather.main.feels_like)
             commit('setDescription', weather.weather[0].description)
             commit('setIconUrl', weather.weather[0].icon)
+            commit('setHumidity', weather.main.humidity)
+            commit('setWindSpeed', weather.wind.speed)
         })
     }
 }
@@ -48,6 +52,12 @@ const mutations = {
     },
     setDescription(state, desc){
         state.description = desc
+    },
+    setHumidity(state, humidity){
+        state.humidity = humidity
+    },
+    setWindSpeed(state, speed){
+        state.wind_speed = speed
     }
 }
 
