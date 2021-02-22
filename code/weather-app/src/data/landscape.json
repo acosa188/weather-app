@@ -1,6 +1,15 @@
 {
-    "spring": [],
-    "summer": [],
-    "fall": [],
-    "winter": ["abandoned_cabin_by_ThemeFinland.png", "snow_brush_by_christoskarapanos.jpg", "snow_tree_by_Lanmana.jpg"]
+    "day":{
+        "spring": [],
+        "summer": [],
+        "fall": [],
+        "winter": ["abandoned_cabin_by_ThemeFinland.png", "it_s_a_warm_morning_in_this_winter_wonderland_by_tomtc.jpg","the_carrot_tree_by_morjer.jpg", "the_nightmare_before_christmas_by_borda.jpg", "snow_tree_by_Lanmana.jpg"]
+    },
+    "night":{
+        "spring": [],
+        "summer": [],
+        "fall": [],
+        "winter": ["nightskating_by_fel_x.jpg", "on_a_cold_night_ii_skyrim_by_watchtheskiies.jpg","snow_brush_by_christoskarapanos.jpg", "somewhere_in_lapland_by_xrust.jpg", "the_distant_barking_of_dogs_by_pajunen.jpg", "unknown_germany_pt__ccclxiii_by_thechosenpesssimist.jpg"]
+    }
+    
 }

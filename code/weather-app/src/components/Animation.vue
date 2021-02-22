@@ -74,7 +74,7 @@ export default {
   created() {},
   watch: {
     weather: function (newVal) {
-      if (newVal === "snow") {
+      if (newVal === "snow" || newVal === "light snow" || newVal === "heavy snow") {
         this.toggleDisplay("sunny_animation", "none");
         this.toggleDisplay("moonlight_animation", "none");
         this.toggleDisplay("snow_animation", "block");

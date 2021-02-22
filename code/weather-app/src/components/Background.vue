@@ -46,12 +46,19 @@ export default {
         : "winter";
     },
     randomBackground(season) {
-      return this.images[season][
-        Math.floor(Math.random() * this.images[season].length)
-      ];
+      let time = new Date().getHours()
+      
+      return (this.isNightTime(time) ? this.images.night[season][
+        Math.floor(Math.random() * this.images.night[season].length)
+      ] : this.images.day[season][
+        Math.floor(Math.random() * this.images.day[season].length)
+      ])
     },
     isPortrait(height, width){
         return height > width;
+    },
+    isNightTime(hour){
+      return hour >= 18 && hour <= 24;
     }
   },
 };

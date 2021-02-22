@@ -1,6 +1,26 @@
 {
-    "spring": [],
-    "summer": [],
-    "fall": [],
-    "winter": ["another_weekend_cabin_by_PascalCampion.jpg"]
+    "day": {
+        "spring": [],
+        "summer": [],
+        "fall": [],
+        "winter": [
+            "snowy_charge_by_dragonwolface.jpg",
+            "tranquility_by_indigosummerr.jpg",
+            "winter_landscape_by_black_bl00d.jpg",
+            "winter_landscape_2_by_black_bl00d.jpg"
+        ]
+    },
+    "night": {
+        "spring": [],
+        "summer": [],
+        "fall": [],
+        "winter": [
+            "another_weekend_cabin_by_PascalCampion.jpg", "between_two_days_by_aenami.jpg",
+            "hi_by_gydw1n.jpg",
+            "rise_of_the_guardians_by_westling.jpg",
+            "shooting_stars_by_gydw1n.png",
+            "snowy___day__201_by_angelganev.png",
+            "winter_walk_by_snatti89.png"
+        ]
+    }
 }
