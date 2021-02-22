@@ -33,6 +33,8 @@ export default {
     await this.$store.dispatch("location/getLocations");
     await this.$store.dispatch("weather/getCurrentWeather",this.$store.state.location.city);
     this.weatherDesc = this.$store.state.weather.description
+    console.log(this.weatherDesc)
+    
   },
   methods: {
     whatSeason(curMonth) {
@@ -47,7 +49,7 @@ export default {
     },
     randomBackground(season) {
       let time = new Date().getHours()
-      
+      console.log(time)
       return (this.isNightTime(time) ? this.images.night[season][
         Math.floor(Math.random() * this.images.night[season].length)
       ] : this.images.day[season][
@@ -58,7 +60,7 @@ export default {
         return height > width;
     },
     isNightTime(hour){
-      return hour >= 18 && hour <= 24;
+      return (hour >= 18 && hour <= 24) || (hour >= 1 && hour <= 5);
     }
   },
 };

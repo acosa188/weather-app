@@ -102,7 +102,7 @@ export default {
         this.toggleDisplay("cloudy_animation", "none");
       }
 
-      if (newVal === "scattered clouds" || newVal === "broken clouds") {
+      if (newVal === "scattered clouds" || newVal === "broken clouds" || newVal === "overcast clouds") {
         this.toggleDisplay("sunny_animation", "none");
         this.toggleDisplay("moonlight_animation", "none");
         this.toggleDisplay("snow_animation", "none");
