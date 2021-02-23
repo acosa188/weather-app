@@ -74,6 +74,9 @@ export default {
   created() {},
   watch: {
     weather: function (newVal) {
+      let today = new Date();
+      let time = today.getHours();
+
       if (newVal === "snow" || newVal === "light snow" || newVal === "heavy snow") {
         this.toggleDisplay("sunny_animation", "none");
         this.toggleDisplay("moonlight_animation", "none");
@@ -83,8 +86,8 @@ export default {
       }
 
       if (
-        (newVal === "clear sky" && this.isDaytime()) ||
-        (newVal === "few clouds" && this.isDaytime())
+        (newVal === "clear sky" && this.isDaytime(time)) ||
+        (newVal === "few clouds" && this.isDaytime(time))
       ) {
         this.toggleDisplay("sunny_animation", "block");
         this.toggleDisplay("moonlight_animation", "none");
@@ -93,8 +96,8 @@ export default {
       }
 
       if (
-        (newVal === "clear sky" && !this.isDaytime()) ||
-        (newVal === "few clouds" && !this.isDaytime())
+        (newVal === "clear sky" && !this.isDaytime(time)) ||
+        (newVal === "few clouds" && !this.isDaytime(time))
       ) {
         this.toggleDisplay("sunny_animation", "none");
         this.toggleDisplay("moonlight_animation", "block");
@@ -111,9 +114,7 @@ export default {
     },
   },
   methods: {
-    isDaytime() {
-      let today = new Date();
-      let time = today.getHours();
+    isDaytime(time) { 
       return time >= 7 && time <= 18;
     },
     toggleDisplay(divId, display) {

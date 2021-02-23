@@ -98,9 +98,10 @@ describe('Background.vue', ()=>{
 
     it('should belong to the choices',async () =>{
         await wrapper.setData({ images: imagesJson})
-        const testArr = imagesJson['winter']
-        
-        expect(testArr.includes(wrapper.vm.randomBackground('winter'))).toBe(true)
+        const testArr = imagesJson.day['winter']
+        const testArr1 = imagesJson.night['winter']
+
+        expect(testArr.includes(wrapper.vm.randomBackground('winter')) || testArr1.includes(wrapper.vm.randomBackground('winter'))).toBe(true)
     })
 
     it('should be portrait', ()=>{
@@ -109,5 +110,21 @@ describe('Background.vue', ()=>{
 
     it('should be landscape', ()=>{
         expect(wrapper.vm.isPortrait(375, 812)).toBe(false)
+    })
+
+    it('should be daytime', ()=>{
+        expect(wrapper.vm.isNightTime(6)).toBe(false)
+    })
+
+    it('should be daytime', ()=>{
+        expect(wrapper.vm.isNightTime(17)).toBe(false)
+    })
+
+    it('should be night time', ()=>{
+        expect(wrapper.vm.isNightTime(18)).toBe(true)
+    })
+
+    it('should be night time', ()=>{
+        expect(wrapper.vm.isNightTime(1)).toBe(true)
     })
 })

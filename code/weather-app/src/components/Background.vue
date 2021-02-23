@@ -49,7 +49,6 @@ export default {
     },
     randomBackground(season) {
       let time = new Date().getHours()
-      console.log(time)
       return (this.isNightTime(time) ? this.images.night[season][
         Math.floor(Math.random() * this.images.night[season].length)
       ] : this.images.day[season][
