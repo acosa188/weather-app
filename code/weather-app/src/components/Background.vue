@@ -33,8 +33,6 @@ export default {
     await this.$store.dispatch("location/getLocations");
     await this.$store.dispatch("weather/getCurrentWeather",this.$store.state.location.city);
     this.weatherDesc = this.$store.state.weather.description
-    console.log(this.weatherDesc)
-    
   },
   methods: {
     whatSeason(curMonth) {
